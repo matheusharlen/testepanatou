@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.17"
+        onstart="startup"
+        logkey="false"
+        bgcolor="#ffffff"
+        projectfloorplanurl=""
+        projecttitleid="project_title"
+        projectdescriptionid="">
+
+  <include url="%FIRSTXML%/pi_core.xml"/>
+  <include url="%FIRSTXML%/pi_messages_en.xml"/>
+
+  <action name="startup">
+    if (s !== null, if (startscene === null, set(startscene, get(s));); );
+    if (startscene === null,
+      set(startscene, pano20);
+    );
+    mainloadscene(get(startscene));
+    if (h !== null,
+      if (v !== null,
+        if (f !== null,
+          lookat(get(h), get(v), get(f));
+         ,
+          lookat(get(h), get(v));
+        );
+      );
+    );
+  </action>
+
+
+  
+  
+
+
+<scene name="pano20"
+       heading="0"
+       thumburl="%FIRSTXML%/_grupo_0__img_8921_i_20/thumbnail.jpg"
+       backgroundsound=""
+       backgroundsoundloops="0"
+       titleid="pano20_title"
+       descriptionid=""
+       multires="true"
+       planar="false"
+       full360="true">
+
+    <autorotate horizon="0.000000" tofov="90.000000" waittime="1" speed="5"/>
+
+    <panoview h="0.000000" v="0.000000" fov="90.000000" hmin="-180" hmax="180" vmin="-90" vmax="90" fovmax="90" />
+    <view fisheye="0"
+          limitview="range"
+          hlookatmin="-180"
+          hlookatmax="180"
+          vlookatmin="-90"
+          vlookatmax="90"
+          maxpixelzoom="1.0"
+          fovmax="90"
+          fov="90.000000"
+          hlookat="0.000000"
+          vlookat="0.000000"/>
+
+    <preview url="%FIRSTXML%/_grupo_0__img_8921_i_20/preview.jpg" type="CUBESTRIP" striporder="FRBLUD"/>
+
+    <image type="CUBE" multires="true" baseindex="0" tilesize="512">
+      <level tiledimagewidth="3425" tiledimageheight="3425">
+        <front url="_grupo_0__img_8921_i_20/0/2/%v_%u.jpg"/>
+        <right url="_grupo_0__img_8921_i_20/1/2/%v_%u.jpg"/>
+        <back  url="_grupo_0__img_8921_i_20/2/2/%v_%u.jpg"/>
+        <left  url="_grupo_0__img_8921_i_20/3/2/%v_%u.jpg"/>
+        <up    url="_grupo_0__img_8921_i_20/4/2/%v_%u.jpg"/>
+        <down  url="_grupo_0__img_8921_i_20/5/2/%v_%u.jpg"/>
+      </level>
+      <level tiledimagewidth="1712" tiledimageheight="1712">
+        <front url="_grupo_0__img_8921_i_20/0/1/%v_%u.jpg"/>
+        <right url="_grupo_0__img_8921_i_20/1/1/%v_%u.jpg"/>
+        <back  url="_grupo_0__img_8921_i_20/2/1/%v_%u.jpg"/>
+        <left  url="_grupo_0__img_8921_i_20/3/1/%v_%u.jpg"/>
+        <up    url="_grupo_0__img_8921_i_20/4/1/%v_%u.jpg"/>
+        <down  url="_grupo_0__img_8921_i_20/5/1/%v_%u.jpg"/>
+      </level>
+      <level tiledimagewidth="856" tiledimageheight="856">
+        <front url="_grupo_0__img_8921_i_20/0/0/%v_%u.jpg"/>
+        <right url="_grupo_0__img_8921_i_20/1/0/%v_%u.jpg"/>
+        <back  url="_grupo_0__img_8921_i_20/2/0/%v_%u.jpg"/>
+        <left  url="_grupo_0__img_8921_i_20/3/0/%v_%u.jpg"/>
+        <up    url="_grupo_0__img_8921_i_20/4/0/%v_%u.jpg"/>
+        <down  url="_grupo_0__img_8921_i_20/5/0/%v_%u.jpg"/>
+      </level>
+    </image>
+
+
+  <action name="setzorder2onstandardspots">
+    if (device.html5,
+      ifnot (device.desktop,
+
+
+      );
+    );
+  </action>  
+
+</scene>
+
+
+
+</krpano>
